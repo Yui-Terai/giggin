@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
-import playlist from "../Playlist/Playlist";
 import Playlist from "../Playlist/Playlist";
 
 class App extends React.Component {
@@ -29,6 +28,7 @@ class App extends React.Component {
     };
 
     this.addTrack = this.addTrack.bind(this);
+    this.removeTrack = this.removeTrack.bind(this);
   }
 
   addTrack(track) {
@@ -41,6 +41,14 @@ class App extends React.Component {
     }
   }
 
+  removeTrack(track) {
+    let tracks = this.state.playlistTracks;
+    tracks = tracks.filter(currentTrack => {
+      return currentTrack.id !== track.id;
+    });
+    this.setState({ playlistTracks: tracks });
+  }
+  
   render() {
     return (
       <div>
@@ -57,6 +65,7 @@ class App extends React.Component {
             <Playlist
               playlistName={this.state.playlistName}
               playlistTracks={this.state.playlistTracks}
+              onRemove={this.removeTrack}
             />
           </div>
         </div>
