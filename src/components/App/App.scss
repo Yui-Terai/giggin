@@ -1,0 +1,54 @@
+@import "../../styles/variables.scss";
+
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Big Shoulders Text", cursive;
+}
+
+h1 {
+  padding: 0.77rem 0;
+  background-color: darken($base-color, 10%);
+  text-align: center;
+  font-family: $allerta-stencil;
+  font-size: 1.88rem;
+  color: #fff;
+
+  .highlight {
+    color: lighten($base-color, 20%);
+  }
+}
+
+.App {
+  padding-bottom: 10%;
+  background-image: linear-gradient(black, black),
+    url("https://source.unsplash.com/PF1l1F1hzoU/1600x900");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: saturation;
+  font-weight: 500;
+  color: #fff;
+}
+
+.App-playlist {
+  display: grid;
+  grid-template-areas: "result playlist";
+  grid-gap: 2rem;
+  justify-content: center;
+  align-content: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .App {
+    background-image: url("https://source.unsplash.com/W8KTS-mhFUE/1600x900");
+  }
+  .App-playlist {
+    grid-template-areas:
+      "result"
+      "playlist";
+  }
+}

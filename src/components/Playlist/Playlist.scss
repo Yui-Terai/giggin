@@ -1,0 +1,63 @@
+@import "../../styles/variables.scss";
+
+.Playlist {
+  grid-area: playlist;
+  overflow-y: scroll;
+  width: 25rem;
+  height: 59.37rem;
+  background-color: rgba($base-color, 0.7);
+  box-shadow: 0 0.25rem 0.125rem 0.125rem #000000;
+
+  input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px dashed #6f6f6f;
+    font-size: 1rem;
+    color: #fff;
+    padding: 1.25rem;
+  }
+}
+
+.Playlist-save {
+  cursor: pointer;
+  width: 10rem;
+  padding: 0.77rem 0;
+  border-radius: 54px;
+  border-width: 0px;
+  margin: 1.27rem;
+  background-color: lighten($base-color, 10%);
+  text-align: center;
+  font-size: 0.83rem;
+  transition: background-color 0.25s;
+  color: #fff;
+  font-weight: 500;
+  font-family: $allerta-stencil;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: darken($base-color, 10%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .Playlist {
+    width: 100%;
+    background-color: rgba($base-color, 0.8);
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+  .Playlist {
+    width: 19rem;
+  }
+}

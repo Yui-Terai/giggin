@@ -1,0 +1,33 @@
+@import "../../styles/variables.scss";
+
+.SearchResults {
+  grid-area: result;
+  width: 38rem;
+  height: 59.37rem;
+  overflow-y: scroll;
+  background-color: rgba($base-color, 0.7);
+  box-shadow: 0 0.25rem 0.125rem 0.125rem #000000;
+  h2 {
+    font-family: $allerta-stencil;
+    font-size: 1.55rem;
+    padding: 1.25rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .SearchResults {
+    width: 20rem;
+    background-color: rgba($base-color, 0.8);
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 1024px) {
+  .SearchResults {
+    width: 25rem;
+  }
+}

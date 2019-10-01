@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchResults: [],
-      playlistName: "New Playlist",
+      playlistName: "",
       playlistTracks: []
     };
 
@@ -46,7 +46,7 @@ class App extends React.Component {
   savePlaylist() {
     const trackUris = this.state.playlistTracks.map(track => track.uri);
     Spotify.savePlaylist(this.state.playlistName, trackUris);
-    this.setState({ playlistName: "New Playlist", playlistTracks: [] });
+    this.setState({ playlistName: "", playlistTracks: [] });
   }
 
   search(term) {
@@ -59,7 +59,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>
-          Gi<span className="highlight">gg</span>in
+          Gi<span className="highlight">gg</span>in'
         </h1>
         <div className="App">
           <SearchBar onSearch={this.search} />
