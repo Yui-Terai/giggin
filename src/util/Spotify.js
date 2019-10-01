@@ -1,5 +1,5 @@
 const apiKey = `${process.env.REACT_APP_API_KEY}`;
-const redirectUri = "http://localhost:3000/";
+const redirectUri = "http://giggin.surge.sh/";
 let accessToken;
 
 const Spotify = {
